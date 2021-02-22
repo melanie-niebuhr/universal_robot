@@ -1,0 +1,77 @@
+digraph G {
+node [shape=box];
+"world" [label="world"];
+"robot_base_link" [label="robot_base_link"];
+"robot_base" [label="robot_base"];
+"robot_shoulder_link" [label="robot_shoulder_link"];
+"robot_upper_arm_link" [label="robot_upper_arm_link"];
+"robot_forearm_link" [label="robot_forearm_link"];
+"robot_wrist_1_link" [label="robot_wrist_1_link"];
+"robot_wrist_2_link" [label="robot_wrist_2_link"];
+"robot_wrist_3_link" [label="robot_wrist_3_link"];
+"robot_ee_link" [label="robot_ee_link"];
+"robot_tool0" [label="robot_tool0"];
+"gripper_palm" [label="gripper_palm"];
+"gripper_finger_1_link_0" [label="gripper_finger_1_link_0"];
+"gripper_finger_1_link_1" [label="gripper_finger_1_link_1"];
+"gripper_finger_1_link_2" [label="gripper_finger_1_link_2"];
+"gripper_finger_1_link_3" [label="gripper_finger_1_link_3"];
+"gripper_finger_2_link_0" [label="gripper_finger_2_link_0"];
+"gripper_finger_2_link_1" [label="gripper_finger_2_link_1"];
+"gripper_finger_2_link_2" [label="gripper_finger_2_link_2"];
+"gripper_finger_2_link_3" [label="gripper_finger_2_link_3"];
+"gripper_finger_middle_link_0" [label="gripper_finger_middle_link_0"];
+"gripper_finger_middle_link_1" [label="gripper_finger_middle_link_1"];
+"gripper_finger_middle_link_2" [label="gripper_finger_middle_link_2"];
+"gripper_finger_middle_link_3" [label="gripper_finger_middle_link_3"];
+"gripper_tool0" [label="gripper_tool0"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"world" -> "world_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"world_joint" -> "robot_base_link"
+"robot_base_link" -> "robot_base_link-base_fixed_joint" [label="xyz: 0 0 0 \nrpy: 0 0 3.14159"]
+"robot_base_link-base_fixed_joint" -> "robot_base"
+"robot_base_link" -> "robot_shoulder_pan_joint" [label="xyz: 0 0 0.181 \nrpy: 0 -0 0"]
+"robot_shoulder_pan_joint" -> "robot_shoulder_link"
+"robot_shoulder_link" -> "robot_shoulder_lift_joint" [label="xyz: 0 0.176 0 \nrpy: 0 1.5708 -0"]
+"robot_shoulder_lift_joint" -> "robot_upper_arm_link"
+"robot_upper_arm_link" -> "robot_elbow_joint" [label="xyz: 0 -0.137 0.613 \nrpy: 0 -0 0"]
+"robot_elbow_joint" -> "robot_forearm_link"
+"robot_forearm_link" -> "robot_wrist_1_joint" [label="xyz: 0 0 0.571 \nrpy: 0 1.5708 -0"]
+"robot_wrist_1_joint" -> "robot_wrist_1_link"
+"robot_wrist_1_link" -> "robot_wrist_2_joint" [label="xyz: 0 0.135 0 \nrpy: 0 -0 0"]
+"robot_wrist_2_joint" -> "robot_wrist_2_link"
+"robot_wrist_2_link" -> "robot_wrist_3_joint" [label="xyz: 0 0 0.12 \nrpy: 0 -0 0"]
+"robot_wrist_3_joint" -> "robot_wrist_3_link"
+"robot_wrist_3_link" -> "robot_ee_fixed_joint" [label="xyz: 0 0.117 0 \nrpy: 0 -0 1.5708"]
+"robot_ee_fixed_joint" -> "robot_ee_link"
+"robot_wrist_3_link" -> "robot_wrist_3_link-tool0_fixed_joint" [label="xyz: 0 0.117 0 \nrpy: -1.5708 0 0"]
+"robot_wrist_3_link-tool0_fixed_joint" -> "robot_tool0"
+"robot_tool0" -> "robot_tool0-gripper_palm" [label="xyz: 0 0 0 \nrpy: 0 -1.5708 1.5708"]
+"robot_tool0-gripper_palm" -> "gripper_palm"
+"gripper_palm" -> "gripper_palm_finger_1_joint" [label="xyz: -0.0455 0.0214 0.036 \nrpy: 3.14159 -7.34641e-06 1.57159"]
+"gripper_palm_finger_1_joint" -> "gripper_finger_1_link_0"
+"gripper_finger_1_link_0" -> "gripper_finger_1_joint_1" [label="xyz: 0.02 0 0 \nrpy: 0 -0 0"]
+"gripper_finger_1_joint_1" -> "gripper_finger_1_link_1"
+"gripper_finger_1_link_1" -> "gripper_finger_1_joint_2" [label="xyz: 0.05 -0.028 0 \nrpy: 0 0 -0.52"]
+"gripper_finger_1_joint_2" -> "gripper_finger_1_link_2"
+"gripper_finger_1_link_2" -> "gripper_finger_1_joint_3" [label="xyz: 0.039 0 0 \nrpy: 0 -0 0"]
+"gripper_finger_1_joint_3" -> "gripper_finger_1_link_3"
+"gripper_palm" -> "gripper_palm_finger_2_joint" [label="xyz: -0.0455 0.0214 -0.036 \nrpy: 3.14159 -7.34641e-06 1.57159"]
+"gripper_palm_finger_2_joint" -> "gripper_finger_2_link_0"
+"gripper_finger_2_link_0" -> "gripper_finger_2_joint_1" [label="xyz: 0.02 0 0 \nrpy: 0 -0 0"]
+"gripper_finger_2_joint_1" -> "gripper_finger_2_link_1"
+"gripper_finger_2_link_1" -> "gripper_finger_2_joint_2" [label="xyz: 0.05 -0.028 0 \nrpy: 0 0 -0.52"]
+"gripper_finger_2_joint_2" -> "gripper_finger_2_link_2"
+"gripper_finger_2_link_2" -> "gripper_finger_2_joint_3" [label="xyz: 0.039 0 0 \nrpy: 0 -0 0"]
+"gripper_finger_2_joint_3" -> "gripper_finger_2_link_3"
+"gripper_palm" -> "gripper_palm_finger_middle_joint" [label="xyz: 0.0455 0.0214 0 \nrpy: 0 -0 1.57"]
+"gripper_palm_finger_middle_joint" -> "gripper_finger_middle_link_0"
+"gripper_finger_middle_link_0" -> "gripper_finger_middle_joint_1" [label="xyz: 0.02 0 0 \nrpy: 0 -0 0"]
+"gripper_finger_middle_joint_1" -> "gripper_finger_middle_link_1"
+"gripper_finger_middle_link_1" -> "gripper_finger_middle_joint_2" [label="xyz: 0.05 -0.028 0 \nrpy: 0 0 -0.52"]
+"gripper_finger_middle_joint_2" -> "gripper_finger_middle_link_2"
+"gripper_finger_middle_link_2" -> "gripper_finger_middle_joint_3" [label="xyz: 0.039 0 0 \nrpy: 0 -0 0"]
+"gripper_finger_middle_joint_3" -> "gripper_finger_middle_link_3"
+"gripper_palm" -> "gripper_palm_tool0" [label="xyz: 0 0.0875 0 \nrpy: 0 -0 1.5707"]
+"gripper_palm_tool0" -> "gripper_tool0"
+}

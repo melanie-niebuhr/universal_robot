@@ -1,0 +1,65 @@
+digraph G {
+node [shape=box];
+"world" [label="world"];
+"robot_base_link" [label="robot_base_link"];
+"robot_base" [label="robot_base"];
+"robot_shoulder_link" [label="robot_shoulder_link"];
+"robot_upper_arm_link" [label="robot_upper_arm_link"];
+"robot_forearm_link" [label="robot_forearm_link"];
+"robot_wrist_1_link" [label="robot_wrist_1_link"];
+"robot_wrist_2_link" [label="robot_wrist_2_link"];
+"robot_wrist_3_link" [label="robot_wrist_3_link"];
+"robot_ee_link" [label="robot_ee_link"];
+"robot_tool0" [label="robot_tool0"];
+"gripper_robotiq_85_adapter_link" [label="gripper_robotiq_85_adapter_link"];
+"gripper_robotiq_85_base_link" [label="gripper_robotiq_85_base_link"];
+"gripper_robotiq_85_left_inner_knuckle_link" [label="gripper_robotiq_85_left_inner_knuckle_link"];
+"gripper_robotiq_85_left_finger_tip_link" [label="gripper_robotiq_85_left_finger_tip_link"];
+"gripper_robotiq_85_left_knuckle_link" [label="gripper_robotiq_85_left_knuckle_link"];
+"gripper_robotiq_85_left_finger_link" [label="gripper_robotiq_85_left_finger_link"];
+"gripper_robotiq_85_right_inner_knuckle_link" [label="gripper_robotiq_85_right_inner_knuckle_link"];
+"gripper_robotiq_85_right_finger_tip_link" [label="gripper_robotiq_85_right_finger_tip_link"];
+"gripper_robotiq_85_right_knuckle_link" [label="gripper_robotiq_85_right_knuckle_link"];
+"gripper_robotiq_85_right_finger_link" [label="gripper_robotiq_85_right_finger_link"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"world" -> "world_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"world_joint" -> "robot_base_link"
+"robot_base_link" -> "robot_base_link-base_fixed_joint" [label="xyz: 0 0 0 \nrpy: 0 0 3.14159"]
+"robot_base_link-base_fixed_joint" -> "robot_base"
+"robot_base_link" -> "robot_shoulder_pan_joint" [label="xyz: 0 0 0.181 \nrpy: 0 -0 0"]
+"robot_shoulder_pan_joint" -> "robot_shoulder_link"
+"robot_shoulder_link" -> "robot_shoulder_lift_joint" [label="xyz: 0 0.176 0 \nrpy: 0 1.5708 -0"]
+"robot_shoulder_lift_joint" -> "robot_upper_arm_link"
+"robot_upper_arm_link" -> "robot_elbow_joint" [label="xyz: 0 -0.137 0.613 \nrpy: 0 -0 0"]
+"robot_elbow_joint" -> "robot_forearm_link"
+"robot_forearm_link" -> "robot_wrist_1_joint" [label="xyz: 0 0 0.571 \nrpy: 0 1.5708 -0"]
+"robot_wrist_1_joint" -> "robot_wrist_1_link"
+"robot_wrist_1_link" -> "robot_wrist_2_joint" [label="xyz: 0 0.135 0 \nrpy: 0 -0 0"]
+"robot_wrist_2_joint" -> "robot_wrist_2_link"
+"robot_wrist_2_link" -> "robot_wrist_3_joint" [label="xyz: 0 0 0.12 \nrpy: 0 -0 0"]
+"robot_wrist_3_joint" -> "robot_wrist_3_link"
+"robot_wrist_3_link" -> "robot_ee_fixed_joint" [label="xyz: 0 0.117 0 \nrpy: 0 -0 1.5708"]
+"robot_ee_fixed_joint" -> "robot_ee_link"
+"robot_wrist_3_link" -> "robot_wrist_3_link-tool0_fixed_joint" [label="xyz: 0 0.117 0 \nrpy: -1.5708 0 0"]
+"robot_wrist_3_link-tool0_fixed_joint" -> "robot_tool0"
+"robot_tool0" -> "robot_tool0-gripper_robotiq_85_adapter_link" [label="xyz: 0 0 0 \nrpy: 0 -1.5708 1.5708"]
+"robot_tool0-gripper_robotiq_85_adapter_link" -> "gripper_robotiq_85_adapter_link"
+"gripper_robotiq_85_adapter_link" -> "gripper_robotiq_85_base_joint" [label="xyz: 0.0085 0 -0.0041 \nrpy: 0 -0 0"]
+"gripper_robotiq_85_base_joint" -> "gripper_robotiq_85_base_link"
+"gripper_robotiq_85_base_link" -> "gripper_robotiq_85_left_inner_knuckle_joint" [label="xyz: 0.04843 0.0127 0 \nrpy: 0 1.5708 -1.5708"]
+"gripper_robotiq_85_left_inner_knuckle_joint" -> "gripper_robotiq_85_left_inner_knuckle_link"
+"gripper_robotiq_85_left_inner_knuckle_link" -> "gripper_robotiq_85_left_finger_tip_joint" [label="xyz: 0 0.04196 -0.0388 \nrpy: 0 -0 0"]
+"gripper_robotiq_85_left_finger_tip_joint" -> "gripper_robotiq_85_left_finger_tip_link"
+"gripper_robotiq_85_base_link" -> "gripper_robotiq_85_left_knuckle_joint" [label="xyz: 0.04191 0.0306 0 \nrpy: 0 1.5708 1.5708"]
+"gripper_robotiq_85_left_knuckle_joint" -> "gripper_robotiq_85_left_knuckle_link"
+"gripper_robotiq_85_left_knuckle_link" -> "gripper_robotiq_85_left_finger_joint" [label="xyz: 0 0.00508 0.03134 \nrpy: 3.1415 -0 0"]
+"gripper_robotiq_85_left_finger_joint" -> "gripper_robotiq_85_left_finger_link"
+"gripper_robotiq_85_base_link" -> "gripper_robotiq_85_right_inner_knuckle_joint" [label="xyz: 0.04843 -0.0127 0 \nrpy: 0 -1.5708 -1.5708"]
+"gripper_robotiq_85_right_inner_knuckle_joint" -> "gripper_robotiq_85_right_inner_knuckle_link"
+"gripper_robotiq_85_right_inner_knuckle_link" -> "gripper_robotiq_85_right_finger_tip_joint" [label="xyz: 0 0.04196 -0.0388 \nrpy: 0 -0 0"]
+"gripper_robotiq_85_right_finger_tip_joint" -> "gripper_robotiq_85_right_finger_tip_link"
+"gripper_robotiq_85_base_link" -> "gripper_robotiq_85_right_knuckle_joint" [label="xyz: 0.04191 -0.0306 0 \nrpy: 0 -1.5708 1.5708"]
+"gripper_robotiq_85_right_knuckle_joint" -> "gripper_robotiq_85_right_knuckle_link"
+"gripper_robotiq_85_right_knuckle_link" -> "gripper_robotiq_85_right_finger_joint" [label="xyz: 0 0.00508 0.03134 \nrpy: 3.1415 -0 0"]
+"gripper_robotiq_85_right_finger_joint" -> "gripper_robotiq_85_right_finger_link"
+}

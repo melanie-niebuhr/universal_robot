@@ -1,0 +1,32 @@
+digraph G {
+node [shape=box];
+"robotiq_85_adapter_link" [label="robotiq_85_adapter_link"];
+"robotiq_85_base_link" [label="robotiq_85_base_link"];
+"robotiq_85_left_inner_knuckle_link" [label="robotiq_85_left_inner_knuckle_link"];
+"robotiq_85_left_finger_tip_link" [label="robotiq_85_left_finger_tip_link"];
+"robotiq_85_left_knuckle_link" [label="robotiq_85_left_knuckle_link"];
+"robotiq_85_left_finger_link" [label="robotiq_85_left_finger_link"];
+"robotiq_85_right_inner_knuckle_link" [label="robotiq_85_right_inner_knuckle_link"];
+"robotiq_85_right_finger_tip_link" [label="robotiq_85_right_finger_tip_link"];
+"robotiq_85_right_knuckle_link" [label="robotiq_85_right_knuckle_link"];
+"robotiq_85_right_finger_link" [label="robotiq_85_right_finger_link"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"robotiq_85_adapter_link" -> "robotiq_85_base_joint" [label="xyz: 0.0085 0 -0.0041 \nrpy: 0 -0 0"]
+"robotiq_85_base_joint" -> "robotiq_85_base_link"
+"robotiq_85_base_link" -> "robotiq_85_left_inner_knuckle_joint" [label="xyz: 0.04843 0.0127 0 \nrpy: 0 1.5708 -1.5708"]
+"robotiq_85_left_inner_knuckle_joint" -> "robotiq_85_left_inner_knuckle_link"
+"robotiq_85_left_inner_knuckle_link" -> "robotiq_85_left_finger_tip_joint" [label="xyz: 0 0.04196 -0.0388 \nrpy: 0 -0 0"]
+"robotiq_85_left_finger_tip_joint" -> "robotiq_85_left_finger_tip_link"
+"robotiq_85_base_link" -> "robotiq_85_left_knuckle_joint" [label="xyz: 0.04191 0.0306 0 \nrpy: 0 1.5708 1.5708"]
+"robotiq_85_left_knuckle_joint" -> "robotiq_85_left_knuckle_link"
+"robotiq_85_left_knuckle_link" -> "robotiq_85_left_finger_joint" [label="xyz: 0 0.00508 0.03134 \nrpy: 3.1415 -0 0"]
+"robotiq_85_left_finger_joint" -> "robotiq_85_left_finger_link"
+"robotiq_85_base_link" -> "robotiq_85_right_inner_knuckle_joint" [label="xyz: 0.04843 -0.0127 0 \nrpy: 0 -1.5708 -1.5708"]
+"robotiq_85_right_inner_knuckle_joint" -> "robotiq_85_right_inner_knuckle_link"
+"robotiq_85_right_inner_knuckle_link" -> "robotiq_85_right_finger_tip_joint" [label="xyz: 0 0.04196 -0.0388 \nrpy: 0 -0 0"]
+"robotiq_85_right_finger_tip_joint" -> "robotiq_85_right_finger_tip_link"
+"robotiq_85_base_link" -> "robotiq_85_right_knuckle_joint" [label="xyz: 0.04191 -0.0306 0 \nrpy: 0 -1.5708 1.5708"]
+"robotiq_85_right_knuckle_joint" -> "robotiq_85_right_knuckle_link"
+"robotiq_85_right_knuckle_link" -> "robotiq_85_right_finger_joint" [label="xyz: 0 0.00508 0.03134 \nrpy: 3.1415 -0 0"]
+"robotiq_85_right_finger_joint" -> "robotiq_85_right_finger_link"
+}
