@@ -1,0 +1,39 @@
+<robot name="ur10e_robotiq" xmlns:xacro="http://wiki.ros.org/xacro">
+
+    <!-- include macros for UR10 and the 2f_85 gripper -->
+    <xacro:include filename="$(find ur_e_description)/urdf/ur10e.urdf.xacro" />
+    <xacro:include filename="$(find cable_simulation)/urdf/robotiq_85_gripper.urdf.xacro" />
+    <xacro:arg name="limited" default="true"/>
+
+    <!-- create the robot + eef combo itself as a macro -->
+    <xacro:macro name="ee_robot" params="prefix">
+
+    <!-- instantiate UR10e and 2f_85 gripper -->
+    <xacro:ur10e_robot prefix="${prefix}robot_" joint_limited="true"/>
+    <xacro:robotiq_85_gripper prefix="${prefix}gripper_" />
+
+  <!-- attach gripper -->
+  <joint name="${prefix}robot_tool0-${prefix}robotiq_85_base_link" type="fixed">
+    <origin xyz="0 0 0" rpy="0 -${pi/2} ${pi/2}" />
+    <parent link="${prefix}robot_tool0" />
+    <child link="${prefix}gripper_robotiq_85_base_link" />
+  </joint>
+
+  <!-- define the ur10's position and orientation in the world coordinate system -->
+    <link name="world"/>
+    <joint name="world_joint" type="fixed">
+    <parent link="world"/>
+    <child link="robot_base_link"/>
+    <!-- TODO: check base_link name of robot -->
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+    </joint>
+
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/</robotNamespace>
+    </plugin>
+  </gazebo>
+
+ </xacro:macro>
+<xacro:ee_robot prefix=""/>
+</robot>

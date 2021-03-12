@@ -1,0 +1,150 @@
+<!-- =================================================================================== -->
+<!-- |    Original from HIWI                                                           | -->
+<!-- |    EDITING THIS FILE BY HAND IS NOT RECOMMENDED                                 | -->
+<!-- =================================================================================== -->
+
+<link name="gripper_robotiq_85_left_finger_tip_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://cable_simulation/meshes/visual/robotiq_85_finger_tip_link.dae"/>
+        <!-- <mesh filename="package://cable_simulation/meshes/visual/robotiq_85_gripper_joint_3_L.dae"/> -->
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://cable_simulation/meshes/collision/robotiq_85_finger_tip_link.stl"/>
+        <!-- <mesh filename="package://cable_simulation/meshes/collision/robotiq_85_gripper_joint_3_L.dae"/> -->
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.019555"/>
+      <origin xyz="0.0 0.0 0.0"/>
+      <inertia ixx="0.000002" ixy="0.000000" ixz="0.000000" iyx="0.000000" iyy="0.000005" iyz="0.000000" izx="0.000000" izy="0.000000" izz="0.000006"/>
+    </inertial>
+  </link>
+
+  <link name="gripper_robotiq_85_right_finger_tip_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://cable_simulation/meshes/visual/robotiq_85_finger_tip_link.dae"/>
+        <!-- <mesh filename="package://cable_simulation/meshes/visual/robotiq_85_gripper_joint_3_R.dae"/> -->
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://cable_simulation/meshes/collision/robotiq_85_finger_tip_link.stl"/>
+        <!-- <mesh filename="package://cable_simulation/meshes/collision/robotiq_85_gripper_joint_3_R.dae"/> -->
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.019555"/>
+      <origin xyz="0.0 0.0 0.0"/>
+      <inertia ixx="0.000002" ixy="0.000000" ixz="0.000000" iyx="0.000000" iyy="0.000005" iyz="0.000000" izx="0.000000" izy="0.000000" izz="0.000006"/>
+    </inertial>
+  </link>
+
+  <!-- =================================================================================== -->
+<!-- |    Switch with c2                                                               | -->
+<!-- |    EDITING THIS FILE BY HAND IS NOT RECOMMENDED                                 | -->
+<!-- =================================================================================== -->
+
+  <link name="gripper_robotiq_85_left_finger_tip_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://cable_simulation/meshes/visual/robotiq_85_gripper_joint_3_L.dae"/>
+      </geometry>
+      <origin rpy="0 1.5707 0" xyz="0 -.090381 .051505"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://cable_simulation/meshes/collision/robotiq_85_gripper_joint_3_L.dae"/>
+      </geometry>
+      <origin rpy="-1.5707 1.5707 0" xyz="0 -.090381 .051505"/>
+    </collision>
+    <inertial>
+      <mass value="0.019555"/>
+      <origin xyz="0.0 0.0 0.0"/>
+      <inertia ixx="0.000002" ixy="0.000000" ixz="0.000000" iyx="0.000000" iyy="0.000005" iyz="0.000000" izx="0.000000" izy="0.000000" izz="0.000006"/>
+    </inertial>
+  </link>
+
+  <link name="gripper_robotiq_85_right_finger_tip_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://cable_simulation/meshes/visual/robotiq_85_gripper_joint_3_R.dae"/>
+      </geometry>
+      <origin rpy="0 -1.5707 0" xyz="0 -.090381 .051505"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://cable_simulation/meshes/collision/robotiq_85_gripper_joint_3_R.dae"/>
+      </geometry>
+      <origin rpy="-1.5707 -1.5707 0" xyz="0 -.090381 .051505"/>
+    </collision>
+    <inertial>
+      <mass value="0.019555"/>
+      <origin xyz="0.0 0.0 0.0"/>
+      <inertia ixx="0.000002" ixy="0.000000" ixz="0.000000" iyx="0.000000" iyy="0.000005" iyz="0.000000" izx="0.000000" izy="0.000000" izz="0.000006"/>
+    </inertial>
+  </link>
+
+  <!-- =================================================================================== -->
+<!-- |    Switch with arg2f_85                                                         | -->
+<!-- |    EDITING THIS FILE BY HAND IS NOT RECOMMENDED                                 | -->
+<!-- =================================================================================== -->
+
+  <link name="gripper_robotiq_85_left_finger_tip_link">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://cable_simulation/meshes/visual/robotiq_arg2f_85_inner_finger.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.1 0.1 0.1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://cable_simulation/meshes/collision/robotiq_arg2f_85_inner_finger.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.019555"/>
+      <origin xyz="0.0 0.0 0.0"/>
+      <inertia ixx="0.000002" ixy="0.000000" ixz="0.000000" iyx="0.000000" iyy="0.000005" iyz="0.000000" izx="0.000000" izy="0.000000" izz="0.000006"/>
+    </inertial>
+  </link>
+
+    <link name="left_inner_finger_pad">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.022 0.00635 0.0375"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.9 0.9 0.9 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.022 0.00635 0.0375"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.9 0.0 0.0 1"/>
+      </material>
+    </collision>
+  </link>
+
+   <joint name="left_inner_finger_pad_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 -0.0220203446692936 0.03242"/>
+    <parent link="gripper_robotiq_85_left_finger_tip_link"/>
+    <child link="left_inner_finger_pad"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+
+
+
+

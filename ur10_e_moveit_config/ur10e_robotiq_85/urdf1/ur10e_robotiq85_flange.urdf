@@ -530,12 +530,12 @@
   <transmission name="gripper_robotiq_85_left_knuckle_trans">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="gripper_robotiq_85_left_knuckle_joint">
-      <hardwareInterface>PositionJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
       <!-- <hardwareInterface>EffortJointInterface</hardwareInterface> -->
     </joint>
     <actuator name="gripper_robotiq_85_left_knuckle_motor">
       <mechanicalReduction>1</mechanicalReduction>
-      <hardwareInterface>PositionJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
       <!-- <hardwareInterface>EfforJointInterface</hardwareInterface> -->
     </actuator>
   </transmission>
@@ -593,4 +593,10 @@
     <!-- TODO: check base_link name of robot -->
     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
   </joint>
+
+      <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+            <robotNamespace>/</robotNamespace>
+        </plugin>
+    </gazebo>
 </robot>
