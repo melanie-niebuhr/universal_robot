@@ -216,6 +216,7 @@
     </joint>
     <actuator name="robot_shoulder_pan_motor">
       <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
     </actuator>
   </transmission>
   <transmission name="robot_shoulder_lift_trans">
@@ -225,6 +226,7 @@
     </joint>
     <actuator name="robot_shoulder_lift_motor">
       <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
     </actuator>
   </transmission>
   <transmission name="robot_elbow_trans">
@@ -234,6 +236,7 @@
     </joint>
     <actuator name="robot_elbow_motor">
       <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
     </actuator>
   </transmission>
   <transmission name="robot_wrist_1_trans">
@@ -243,6 +246,7 @@
     </joint>
     <actuator name="robot_wrist_1_motor">
       <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
     </actuator>
   </transmission>
   <transmission name="robot_wrist_2_trans">
@@ -252,6 +256,7 @@
     </joint>
     <actuator name="robot_wrist_2_motor">
       <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
     </actuator>
   </transmission>
   <transmission name="robot_wrist_3_trans">
@@ -261,6 +266,7 @@
     </joint>
     <actuator name="robot_wrist_3_motor">
       <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
     </actuator>
   </transmission>
   <gazebo reference="robot_shoulder_link">
