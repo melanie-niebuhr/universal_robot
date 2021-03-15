@@ -490,7 +490,7 @@
       </material>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin rpy="0 0 0" xyz="-0.0069 -0.019 0.0"/>
       <geometry>
         <mesh filename="package://cable_simulation/meshes/collision/robotiq_arg2f_85_inner_finger.dae" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -509,6 +509,7 @@
       <origin rpy="0 -1.5707 3.14159" xyz="0 0 0"/>
       <geometry>
         <box size="0.022 0.00635 0.05"/>
+        <!-- <box size="0.022 0.00635 0.0375"/> -->
       </geometry>
       <material name="">
         <color rgba="0.9 0.9 0.9 1"/>
@@ -517,7 +518,8 @@
     <collision>
       <origin rpy="0 -1.5707 3.14159" xyz="0 0 0"/>
       <geometry>
-        <box size="0.022 0.00635 0.0375"/>
+        <box size="0.022 0.00635 0.05"/>
+        <!-- <box size="0.022 0.00635 0.0375"/> -->
       </geometry>
       <material name="">
         <color rgba="0.9 0.0 0.0 1"/>
@@ -527,6 +529,7 @@
 
    <joint name="left_inner_finger_pad_joint" type="fixed">
     <origin rpy="0 0 0" xyz="0.03175 0.0035 0"/>
+    <!-- <origin rpy="0 0 0" xyz="0.0255 0.0035 0"/> -->
     <parent link="gripper_robotiq_85_left_finger_tip_link"/>
     <child link="left_inner_finger_pad"/>
     <axis xyz="0 0 1"/>
@@ -536,15 +539,20 @@
 
 
 
-  <link name="gripper_robotiq_85_right_finger_tip_link">
+    <link name="gripper_robotiq_85_right_finger_tip_link">
     <visual>
+      <origin rpy="0 -1.5707 3.14159" xyz="-0.0069 -0.019 0.0"/>
       <geometry>
-        <mesh filename="package://cable_simulation/meshes/visual/robotiq_85_finger_tip_link.dae"/>
+        <mesh filename="package://cable_simulation/meshes/visual/robotiq_arg2f_85_inner_finger.dae" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.1 0.1 0.1 1"/>
+      </material>
     </visual>
     <collision>
+      <origin rpy="0 -1.5707 3.14159" xyz="-0.0069 -0.019 0.0"/>
       <geometry>
-        <mesh filename="package://cable_simulation/meshes/collision/robotiq_85_finger_tip_link.stl"/>
+        <mesh filename="package://cable_simulation/meshes/collision/robotiq_arg2f_85_inner_finger.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
     <inertial>
@@ -553,6 +561,44 @@
       <inertia ixx="0.000002" ixy="0.000000" ixz="0.000000" iyx="0.000000" iyy="0.000005" iyz="0.000000" izx="0.000000" izy="0.000000" izz="0.000006"/>
     </inertial>
   </link>
+
+
+
+      <link name="right_inner_finger_pad">
+    <visual>
+      <origin rpy="0 -1.5707 3.14159" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.022 0.00635 0.05"/>
+        <!-- <box size="0.022 0.00635 0.0375"/> -->
+      </geometry>
+      <material name="">
+        <color rgba="0.9 0.9 0.9 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 -1.5707 3.14159" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.022 0.00635 0.05"/>
+        <!-- <box size="0.022 0.00635 0.0375"/> -->
+      </geometry>
+      <material name="">
+        <color rgba="0.9 0.0 0.0 1"/>
+      </material>
+    </collision>
+  </link>
+
+   <joint name="right_inner_finger_pad_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0.03175 0.0035 0"/>
+    <!-- <origin rpy="0 0 0" xyz="0.0255 0.0035 0"/> -->
+    <parent link="gripper_robotiq_85_right_finger_tip_link"/>
+    <child link="right_inner_finger_pad"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+
+
+
+
 
 
   <!-- Improve grasping physics -->
