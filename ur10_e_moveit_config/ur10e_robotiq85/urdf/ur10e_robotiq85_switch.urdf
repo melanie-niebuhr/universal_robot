@@ -479,7 +479,8 @@
     <mimic joint="gripper_robotiq_85_left_knuckle_joint" multiplier="-1"/>
   </joint>
 
-      <!-- TODO: check origin of left finger tip etc... -->
+
+  <!-- TODO: check origin of left finger tip etc... -->
 
   <link name="gripper_robotiq_85_left_finger_tip_link">
     <visual>
@@ -504,9 +505,7 @@
     </inertial>
   </link>
 
-
-
-      <link name="left_inner_finger_pad">
+  <link name="left_inner_finger_pad">
     <visual>
       <origin rpy="0 -1.5707 3.14159" xyz="0 0 0"/>
       <geometry>
@@ -532,7 +531,7 @@
   </link>
 
    <joint name="left_inner_finger_pad_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="-0.003536 0.0035 0"/>
+    <origin rpy="0 0 0" xyz="0.03175 0.0035 0"/>
     <!-- <origin rpy="0 0 0" xyz="0.03175 0.0035 0"/> -->
     <!-- <origin rpy="0 0 0" xyz="0.0255 0.0035 0"/> -->
     <parent link="gripper_robotiq_85_left_finger_tip_link"/>
@@ -542,9 +541,9 @@
 
 
 
-      <!-- TODO: check origin of left finger tip etc... -->
+   <!-- TODO: check origin of right finger tip etc... -->
 
-    <link name="gripper_robotiq_85_right_finger_tip_link">
+   <link name="gripper_robotiq_85_right_finger_tip_link">
     <visual>
       <origin rpy="0 -1.5707 3.14159" xyz="-0.0069 -0.019 0.0"/>
       <geometry>
@@ -567,9 +566,7 @@
     </inertial>
   </link>
 
-
-
-      <link name="right_inner_finger_pad">
+  <link name="right_inner_finger_pad">
     <visual>
       <origin rpy="0 -1.5707 3.14159" xyz="0 0 0"/>
       <geometry>
@@ -599,10 +596,6 @@
     <child link="right_inner_finger_pad"/>
     <axis xyz="0 0 1"/>
   </joint>
-
-
-
-
 
 
 

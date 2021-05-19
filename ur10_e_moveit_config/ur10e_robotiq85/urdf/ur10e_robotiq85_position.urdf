@@ -512,6 +512,7 @@
       <inertia ixx="0.000002" ixy="0.000000" ixz="0.000000" iyx="0.000000" iyy="0.000005" iyz="0.000000" izx="0.000000" izy="0.000000" izz="0.000006"/>
     </inertial>
   </link>
+  <!-- TODO: Grasping Physics -->
   <!-- Improve grasping physics -->
   <gazebo reference="gripper_robotiq_85_left_finger_tip_link">
     <kp>1000000.0</kp>
