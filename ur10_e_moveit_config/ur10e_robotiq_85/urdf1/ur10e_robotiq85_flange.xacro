@@ -1,16 +1,16 @@
 <robot name="ur10e_robotiq85_flange" xmlns:xacro="http://wiki.ros.org/xacro">
 
-    <!-- include macros for UR10 and the 2f_85 gripper -->
-    <xacro:include filename="$(find ur_e_description)/urdf/ur10e.urdf.xacro" />
-    <xacro:include filename="$(find cable_simulation)/urdf/robotiq_85_gripper.urdf.xacro" />
-    <xacro:arg name="limited" default="true"/>
+  <!-- include macros for UR10 and the 2f_85 gripper -->
+  <xacro:include filename="$(find ur_e_description)/urdf/ur10e.urdf.xacro" />
+  <xacro:include filename="$(find cable_simulation)/urdf/robotiq_85_gripper.urdf.xacro" />
+  <xacro:arg name="limited" default="true"/>
 
-    <!-- create the robot + eef combo itself as a macro -->
-    <xacro:macro name="ee_robot" params="prefix">
+  <!-- create the robot + eef combo itself as a macro -->
+  <xacro:macro name="ee_robot" params="prefix">
 
-    <!-- instantiate UR10e and 2f_85 gripper -->
-    <xacro:ur10e_robot prefix="${prefix}robot_" joint_limited="true"/>
-    <xacro:robotiq_85_gripper prefix="${prefix}gripper_" />
+  <!-- instantiate UR10e and 2f_85 gripper -->
+  <xacro:ur10e_robot prefix="${prefix}robot_" joint_limited="true"/>
+  <xacro:robotiq_85_gripper prefix="${prefix}gripper_" />
 
   <!-- include camera flange -->
   <joint name="${prefix}robot_tool0-${prefix}flange_joint" type="fixed">
@@ -36,11 +36,11 @@
 
   <!-- define the ur10's position and orientation in the world coordinate system -->
     <link name="world"/>
-    <joint name="world_joint" type="fixed">
-    <parent link="world"/>
-    <child link="robot_base_link"/>
     <!-- TODO: check base_link name of robot -->
-    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+    <joint name="world_joint" type="fixed">
+      <parent link="world"/>
+      <child link="robot_base_link"/>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
     </joint>
 
  </xacro:macro>
